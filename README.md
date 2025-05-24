@@ -44,26 +44,6 @@ Options to reclaim space from docker cache:
    docker system prune
    ```
 
-## Portainer
+## Setup
 
-Navigate to `https://localhost:9443/`.
-
-Upon landing, create account as instructed on-screen, and login.
-
-For full control of docker apps through Portainer, it is recommended to copy paste the individual `docker-compose.yaml` files into `Stacks` -> `+ Add Stack`
-
-## Postgres + PgAdmin
-
-Navigate to `http://localhost:8080/`
-
-By default, the Postgres container is running using the name `db`. So to connect to it on PgAdmin, use the following info:
-
-```props
-hostname: db
-username: postgres
-password: password
-```
-
-### Typical connection string
-
-`postgresql://postgres:password@localhost:5432/postgres?schema=public`
+Start with Portainer, and preferabley add/manage containers/stacks through the Portainer interface.
