@@ -47,3 +47,11 @@ Options to reclaim space from docker cache:
 ## Setup
 
 Start with Portainer, and preferabley add/manage containers/stacks through the Portainer interface.
+
+## Port numbers at a glance
+
+| Port number | App       |
+| ----------- | --------- |
+| 9443        | Portainer |
+| 8080        | PgAdmin   |
+| 5432        | Postgres  |
