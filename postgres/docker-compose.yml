@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: my-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432" # Expose PostgreSQL port to host
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@email.com # Change this to your desired email
+      PGADMIN_DEFAULT_PASSWORD: password # Change this to a strong password
+    ports:
+      - "8080:80" # Access pgAdmin on http://localhost:8080
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin # Persistent storage for pgAdmin configuration
+    depends_on:
+      - db # Ensure 'db' service starts before 'pgadmin'
+
+volumes:
+  db_data:
+  pgadmin_data:

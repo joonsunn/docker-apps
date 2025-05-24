@@ -1,0 +1,17 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:latest # Using the Community Edition
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Mount the Docker socket
+      - portainer_data:/data # Persistent storage for Portainer data
+    ports:
+      - "8000:8000" # For Edge Agent (optional, but good to have)
+      - "9443:9443" # Main Portainer UI (HTTPS)
+      # - "9000:9000" # Optional: HTTP UI for legacy reasons, or if you disable HTTPS
+
+volumes:
+  portainer_data:
