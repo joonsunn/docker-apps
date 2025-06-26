@@ -55,3 +55,13 @@ Start with Portainer, and preferabley add/manage containers/stacks through the P
 | 9443        | Portainer |
 | 8080        | PgAdmin   |
 | 5432        | Postgres  |
+
+## Updating apps
+
+Docker images receive updates periodically. To update the apps,
+
+```bash
+docker compose down
+docker compose pull
+docker compose up -d
+```
